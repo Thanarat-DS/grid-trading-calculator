@@ -6,9 +6,9 @@ import { useGridCalculation } from './hooks/useGridCalculation';
 
 const App = () => {
   // --- State ---
-  const [upperPrice, setUpperPrice] = useState<string>('2050');
-  const [lowerPrice, setLowerPrice] = useState<string>('2000');
-  const [gridStep, setGridStep] = useState<string>('5'); // Points ($)
+  const [upperPrice, setUpperPrice] = useState<string>('4400');
+  const [lowerPrice, setLowerPrice] = useState<string>('4000');
+  const [gridStep, setGridStep] = useState<string>('50'); // Points ($)
   const [initialLot, setInitialLot] = useState<string>('0.01');
   const [leverage, setLeverage] = useState<string>('500');
   const [direction, setDirection] = useState<'Long' | 'Short'>('Long');

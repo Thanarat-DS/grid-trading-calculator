@@ -70,20 +70,20 @@ export const ConfigurationPanel = ({
                             label={direction === 'Long' ? "Grid Top Price" : "Grid Top (Stop)"}
                             value={upperPrice}
                             onChange={setUpperPrice}
-                            placeholder="2050"
+                            placeholder="4400"
                             icon={<TrendingUp size={14} />}
                         />
                         <InputGroup
                             label={direction === 'Long' ? "Grid Bottom (Stop)" : "Grid Bottom Price"}
                             value={lowerPrice}
                             onChange={setLowerPrice}
-                            placeholder="2000"
+                            placeholder="4000"
                             icon={<TrendingDown size={14} />}
                         />
                     </div>
 
                     <div className="grid grid-cols-2 gap-4">
-                        <InputGroup label="Grid Step ($)" value={gridStep} onChange={setGridStep} placeholder="5" />
+                        <InputGroup label="Grid Step ($)" value={gridStep} onChange={setGridStep} placeholder="50" />
                         <InputGroup label="Start Lot" value={initialLot} onChange={setInitialLot} placeholder="0.01" />
                     </div>
 
