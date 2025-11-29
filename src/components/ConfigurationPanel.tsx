@@ -104,7 +104,7 @@ export const ConfigurationPanel = ({
                         </button>
                     </div>
 
-                    <div className={`transition-all duration-300 overflow-hidden ${useMartingale ? 'max-h-20 opacity-100' : 'max-h-0 opacity-50'}`}>
+                    <div className={`transition-all duration-300 overflow-hidden ${useMartingale ? 'max-h-50 opacity-100' : 'max-h-0 opacity-50'}`}>
                         <InputGroup
                             label="Multiplier Factor"
                             value={multiplier}
