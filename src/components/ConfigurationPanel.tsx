@@ -18,6 +18,8 @@ interface ConfigurationPanelProps {
     setUseMartingale: (value: boolean) => void;
     multiplier: string;
     setMultiplier: (value: string) => void;
+    isPortCent: boolean;
+    setIsPortCent: (value: boolean) => void;
 }
 
 export const ConfigurationPanel = ({
@@ -37,6 +39,8 @@ export const ConfigurationPanel = ({
     setUseMartingale,
     multiplier,
     setMultiplier,
+    isPortCent,
+    setIsPortCent,
 }: ConfigurationPanelProps) => {
     return (
         <div className="lg:col-span-4 space-y-6">
@@ -112,6 +116,21 @@ export const ConfigurationPanel = ({
                             placeholder="2.0"
                             hint="Next Lot = Previous Lot × Multiplier"
                         />
+                    </div>
+                </div>
+
+                {/* Cent Account Section */}
+                <div className="mt-4 pt-4 border-t border-slate-700">
+                    <div className="flex items-center justify-between">
+                        <label className="text-sm font-medium text-slate-300 flex items-center gap-2">
+                            Cent Account (USC)
+                        </label>
+                        <button
+                            onClick={() => setIsPortCent(!isPortCent)}
+                            className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none ${isPortCent ? 'bg-amber-500' : 'bg-slate-600'}`}
+                        >
+                            <span className={`${isPortCent ? 'translate-x-6' : 'translate-x-1'} inline-block h-4 w-4 transform rounded-full bg-white transition-transform`} />
+                        </button>
                     </div>
                 </div>
             </div>

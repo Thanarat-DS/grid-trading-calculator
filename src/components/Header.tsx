@@ -13,7 +13,7 @@ export const Header = () => {
                     </h1>
                 </div>
                 <div className="text-xs font-mono text-slate-400 bg-slate-900 px-3 py-1 rounded-full border border-slate-700">
-                    v1.0.0
+                    v1.0.1
                 </div>
             </div>
         </header>

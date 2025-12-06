@@ -4,10 +4,14 @@ import type { CalculationResult } from '../types';
 interface ResultsTableProps {
     result: CalculationResult;
     direction: 'Long' | 'Short';
+    isPortCent: boolean;
 }
 
-export const ResultsTable = ({ result, direction }: ResultsTableProps) => {
+export const ResultsTable = ({ result, direction, isPortCent }: ResultsTableProps) => {
     const formatCurrency = (num: number) => {
+        if (isPortCent) {
+            return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num).replace('$', '¢');
+        }
         return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(num);
     };
 
@@ -63,8 +67,8 @@ export const ResultsTable = ({ result, direction }: ResultsTableProps) => {
                                         {row.price.toFixed(2)}
                                     </td>
                                     <td className="px-6 py-3 font-mono text-slate-200">{row.lot.toFixed(2)}</td>
-                                    <td className="px-6 py-3 text-slate-400">${row.margin.toFixed(2)}</td>
-                                    <td className="px-6 py-3 text-emerald-400 font-medium">+${row.profitPerGrid.toFixed(2)}</td>
+                                    <td className="px-6 py-3 text-slate-400">{isPortCent ? '¢' : '$'}{row.margin.toFixed(2)}</td>
+                                    <td className="px-6 py-3 text-emerald-400 font-medium">+{isPortCent ? '¢' : '$'}{row.profitPerGrid.toFixed(2)}</td>
                                 </tr>
                             ))}
                             {result.rows.length === 0 && (

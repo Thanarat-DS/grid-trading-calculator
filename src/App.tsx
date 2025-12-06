@@ -16,6 +16,7 @@ const App = () => {
   // Optional / Martingale
   const [useMartingale, setUseMartingale] = useState<boolean>(false);
   const [multiplier, setMultiplier] = useState<string>('2.0');
+  const [isPortCent, setIsPortCent] = useState<boolean>(false);
 
   // --- Calculation Logic ---
   const result = useGridCalculation({
@@ -52,9 +53,11 @@ const App = () => {
             setUseMartingale={setUseMartingale}
             multiplier={multiplier}
             setMultiplier={setMultiplier}
+            isPortCent={isPortCent}
+            setIsPortCent={setIsPortCent}
           />
 
-          <ResultsTable result={result} direction={direction} />
+          <ResultsTable result={result} direction={direction} isPortCent={isPortCent} />
         </div>
       </main>
     </div>
